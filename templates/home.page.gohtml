@@ -1,14 +1,21 @@
 {{ template "base" . }}
-
+{{ define "css" }}
+    <link rel="stylesheet" href="/static/css/homepage.css" />
+{{ end }}
 {{ define "content" }}
+<!-- <img src="static/home-page/puppies.jpg" class="img img-fluid" alt="Cute puppies" /> -->
 
-    <div class="content">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Welcome to the Home Page</h1>
-                <p>This is the main content of the home page.</p>
-            </div>
-        </div>
-    </div>
+<div class="header-container">
+  <div class="header-child">
+    <h1 class="header-text">Go Find a Pet!</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <h1>Welcome to the Home Page</h1>
+    <p>This is the main content of the home page.</p>
+  </div>
+</div>
 
 {{ end }}

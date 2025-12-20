@@ -12,7 +12,9 @@
             "mode": "auto",
             "program": "${workspaceFolder}\\cmd\\web",
             "args": [
-                "-templatePath=../../templates"
+                "-templatePath=../../templates",
+                "-cache=true",
+                "-staticResourcesPath=../../static/"
             ],
         },
         {
@@ -21,7 +23,7 @@
             "request": "launch",
             "mode": "auto",
             "program": "${workspaceFolder}/cmd/web",
-            "args": ["-templatePath=../../templates"],
+            "args": ["-templatePath=../../templates", "-cache=true", "-staticResourcesPath=../../static/"],
         }
     ]
 }

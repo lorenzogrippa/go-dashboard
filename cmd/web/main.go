@@ -18,6 +18,7 @@ type application struct {
 type appConfig struct {
 	useCache         bool
 	templateBasePath string
+	staticResources  string
 }
 
 func main() {
@@ -27,10 +28,16 @@ func main() {
 
 	// get command line arguments (args passed to application)
 	flag.BoolVar(&app.config.useCache, "cache", false, "set true for use the cache templates")
-	flag.StringVar(&app.config.templateBasePath, "templatePath", "templates", "path of templates file")
+	flag.StringVar(&app.config.templateBasePath, "templatePath", "./templates", "path of templates file")
+	flag.StringVar(&app.config.staticResources, "staticResourcesPath", "./static/", "path of static resources")
 	flag.Parse()
 
 	log.Println("html templates are in: ", app.config.templateBasePath)
+	log.Println("static resources path are in: ", app.config.staticResources)
+
+	if app.config.useCache {
+		log.Println("Ok use cache for the templates")
+	}
 
 	srv := &http.Server{
 		Addr:              port,
