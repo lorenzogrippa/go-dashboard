@@ -1,6 +1,8 @@
 package main
 
 import (
+	"flag"
+	"html/template"
 	"log"
 	"net/http"
 	"time"
@@ -9,10 +11,26 @@ import (
 const port = ":4000"
 
 type application struct {
+	templateMap map[string]*template.Template
+	config      appConfig
+}
+
+type appConfig struct {
+	useCache         bool
+	templateBasePath string
 }
 
 func main() {
-	app := application{}
+	app := application{
+		templateMap: make(map[string]*template.Template),
+	}
+
+	// get command line arguments (args passed to application)
+	flag.BoolVar(&app.config.useCache, "cache", false, "set true for use the cache templates")
+	flag.StringVar(&app.config.templateBasePath, "templatePath", "templates", "path of templates file")
+	flag.Parse()
+
+	log.Println("html templates are in: ", app.config.templateBasePath)
 
 	srv := &http.Server{
 		Addr:              port,
