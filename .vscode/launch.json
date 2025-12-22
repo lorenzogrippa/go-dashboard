@@ -12,8 +12,9 @@
             "mode": "auto",
             "program": "${workspaceFolder}\\cmd\\web",
             "args": [
+                "-dns=root:_local_root_@tcp(localhost:3306)/breeders?parseTime=true&tls=false",
                 "-templatePath=../../templates",
-                "-cache=true",
+                "-cache=false",
                 "-staticResourcesPath=../../static/"
             ],
         },
@@ -23,7 +24,7 @@
             "request": "launch",
             "mode": "auto",
             "program": "${workspaceFolder}/cmd/web",
-            "args": ["-templatePath=../../templates", "-cache=true", "-staticResourcesPath=../../static/"],
+            "args": ["-templatePath=../../templates", "-cache=false", "-staticResourcesPath=../../static/"],
         }
     ]
 }

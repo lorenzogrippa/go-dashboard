@@ -1,0 +1,69 @@
+{{ template "base" . }}
+
+{{ define "content" }}
+
+    <div class="content">
+        <div class="row">
+            <div class="col mt-4 p-4">
+                <h1>Factory Pattern</h1>
+                <hr />
+                <div>
+                    <button  id="dogFactoryBtn" class="btn btn-outline-secondary">Get a dog from factory</button>
+                    <button id="catFactoryBtn" class="btn btn-outline-secondary">Get a cat from factory</button>
+                </div>
+                <div id="result" class="mt-4" style="outline: 1px solid silver; padding: 2em;"  >
+                    <pre id="dog-factory-output">
+                        <span class="text-muted">Nothings received yet...</span>
+                    </pre>
+
+                    <pre id="cat-factory-output">
+                        <span class="text-muted">Nothings received yet...</span>
+                    </pre>
+
+                </div>
+
+
+                <hr  class="mt-4"/>
+                <h1>Abstract Factory Pattern</h1>
+                <div>
+                    <button  id="dogAbstractFactoryBtn" class="btn btn-outline-secondary">Get a dog from abstract factory</button>
+                    <button id="catAbstractFactoryBtn" class="btn btn-outline-secondary">Get a cat from abstract factory</button>
+                </div>
+                <div id="result" class="mt-4" style="outline: 1px solid silver; padding: 2em;"  >
+                    <pre id="dog-abstract-factory-output">
+                        <span class="text-muted">Nothings received yet...</span>
+                    </pre>
+
+                    <pre id="cat-abstract-factory-output">
+                        <span class="text-muted">Nothings received yet...</span>
+                    </pre>
+
+                </div>
+                
+
+                <hr  class="mt-4"/>
+                <h1>Builder Pattern</h1>
+                <div>
+                    <button  id="dogBuilderBtn" class="btn btn-outline-secondary">Get a dog from builder</button>
+                    <button id="catBuilderBtn" class="btn btn-outline-secondary">Get a cat from builder</button>
+                </div>
+                <div id="result" class="mt-4" style="outline: 1px solid silver; padding: 2em;"  >
+                    <pre id="dog-builder-output">
+                        <span class="text-muted">Nothings received yet...</span>
+                    </pre>
+
+                    <pre id="cat-builder-output">
+                        <span class="text-muted">Nothings received yet...</span>
+                    </pre>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{{ end}}
+
+{{ define "scripts" }}
+    <script src="/static/js/test.page.js"></script>
+{{ end }}

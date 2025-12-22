@@ -1,4 +1,7 @@
 {{ template "base" . }}
+{{ define "css" }}
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css">
+{{ end }}
 
 {{ define "content" }}
 
@@ -9,6 +12,39 @@
                 <p>This page provides information about selected dog breeds.</p>
             </div>
         </div>
+
+        <div class="row mt-4">
+            <div class="col">
+                <table id="dogBreedsDataTable">
+                    <thead>
+                        <tr>
+                            <th>Details</th>
+                            <th>Breed</th>
+                            <th></th>
+                            <th></th>
+                            <th>
+                                <div style="text-align: center;">
+                                    Average Weight (lbs)
+                                </div>
+                            </th>
+                             <th>
+                                <div style="text-align: center;">
+                                    Average Lifespan (years)
+                                </div>
+                            </th>
+                            <th> </th>
+                            <th> </th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
     </div>
 
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script>
+    <script src="/static/js/dog-breed.page.js"></script>
 {{ end }}
